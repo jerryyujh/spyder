@@ -180,10 +180,12 @@ jobs:
           echo "CNAME=$CNAME" >> $GITHUB_ENV
 
           _codesign=$(which codesign)
+          echo "codesign: $_codesign"
           if [[ $_codesign =~ ${CONDA_PREFIX}.* ]]; then
               # Find correct codesign
               echo "Moving $_codesign..."
               mv $_codesign ${_codesign}.bak
+              echo "codesign: $(which codesign)"
           fi
 
       - name: Build Package Installer
