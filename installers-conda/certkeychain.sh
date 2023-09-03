@@ -64,7 +64,7 @@ security list-keychains -s $KEYCHAIN
 security unlock-keychain -p $KEY_PASS $KEYCHAIN
 
 log "Importing certificate(s)..."
-args=("-k" "$KEYCHAIN" "-P" "$PASS" "-T" "/usr/bin/codesign" "-T" "/usr/bin/productsign")
+args=("-k" "$KEYCHAIN" "-P" "$PASS" "-A")
 for cert in ${CERTS[@]}; do
     if [[ -e $cert ]]; then
         log "Importing cert file $cert..."
