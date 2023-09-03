@@ -78,7 +78,7 @@ for cert in ${CERTS[@]}; do
 done
 
 # Ensure that applications can access the cert without GUI prompt
-security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k $KEY_PASS $KEYCHAIN
+# security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k $KEY_PASS $KEYCHAIN
 
 # verify import
 log "Verifying identity..."
